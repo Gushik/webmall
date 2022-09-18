@@ -1,4 +1,4 @@
-# Допомога при  всановленні
+# Допомога при  встановленні
 
 `git clone https://github.com/Gushik/webmall-master`
 
