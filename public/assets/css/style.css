@@ -2768,14 +2768,14 @@ a.banner-book-style-btn:hover {
     top: 0;
 }
 .electro-banner-style > h1 {
-    color: #515151;
+    color: red;
     font-size: 30px;
     font-weight: bold;
     margin: 0;
     text-transform: uppercase;
 }
 .electro-banner-style > h2 {
-    color: #515151;
+    color: red;
     font-size: 24px;
     font-weight: bold;
     letter-spacing: 0.5px;
@@ -2789,8 +2789,8 @@ a.banner-book-style-btn:hover {
     margin-bottom: 10px;
 }
 .electro-banner-style > a {
-    color: #515151;
-    font-size: 14px;
+    color: white;
+    font-size: 40px;
     font-weight: bold;
     text-transform: uppercase;
 }

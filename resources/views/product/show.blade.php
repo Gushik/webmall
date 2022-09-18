@@ -94,6 +94,6 @@
 @include('product._reviews')
 
 <!-- related product area start -->
-{{-- @include('product._related-product') --}}
+ @include('product._related-product')
 
 @endsection

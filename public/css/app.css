@@ -11354,20 +11354,6 @@ a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
-    .top-information__picture[_ngcontent-rz-client-c81] {
-        width: 100%;
 
-        vertical-align: middle;
-    }
-    .top-information__inner[_ngcontent-rz-client-c81] {
-        position: absolute;
-        display: inline-flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 32px;
-        margin: 0 auto;
-    }
 }
 

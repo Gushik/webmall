@@ -1,28 +1,26 @@
-# How to use
-Clone repo
+# Допомога при  всановленні
 
-`git clone https://github.com/webdevmatics/webmall.git`
+`git clone https://github.com/Gushik/webmall-master`
 
-`Save .env.example as .env and put your database credentials`
+`Збереги .env.example в .env і налатувати дані підключення до бази даних`
 
 
-Install the composer dependencies
+Встановити composer 
 
 `composer install`
 
-
-Set application key
+Згенерувати код
 
 `php artisan key:generate`   
 
-And Migrate with
+Запустити міграції
 
-`php artisan migrate --seed` or `php artisan migrate:fresh --seed`
+`php artisan migrate --seed` чи `php artisan migrate:fresh --seed`
 
  `php artisan storage:link`
 
 
-Login Credentials for admin panel
+Логін і пароль до адмін панелі і магазинів
 
  admin@webmall.com  password : password
  seller1@webmall.com  password : password

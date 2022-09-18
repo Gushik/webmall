@@ -1,4 +1,4 @@
-<div class="category-menu-list">
+
     <ul>
         @foreach($categories as $category)
         <li>
@@ -42,4 +42,4 @@
         @endforeach
 
     </ul>
-</div>
+

@@ -3,19 +3,12 @@
 
 @section('content')
 
+<div>
+    @include('_slider')
 
-<div class="breadcrumb-area pt-205 breadcrumb-padding pb-210"
-    style="background-image: url(/assets/img/bg/breadcrumb.jpg)">
-    <div class="container-fluid">
-        <div class="breadcrumb-content text-center">
-            <h2> shop grid</h2>
-            <ul>
-                <li><a href="#">home</a></li>
-                <li>shop grid</li>
-            </ul>
-        </div>
-    </div>
 </div>
+
+
 
 
 <div class="shop-page-wrapper shop-page-padding ptb-100">
@@ -46,15 +39,9 @@
                         </div>
                     </div>
                     <div class="sidebar-widget mb-45">
-                        <h3 class="sidebar-title">Categories</h3>
+                        <h3 class="sidebar-title">Категорії</h3>
                         <div class="sidebar-categories">
-                            <ul>
-                                <li><a href="#">Accessories <span>4</span></a></li>
-                                <li><a href="#">Book <span>9</span></a></li>
-                                <li><a href="#">Clothing <span>5</span> </a></li>
-                                <li><a href="#">Homelife <span>3</span></a></li>
-                                <li><a href="#">Kids & Baby <span>4</span></a></li>
-                            </ul>
+                           @include('_category-list')
                         </div>
                     </div>
                     <div class="sidebar-widget sidebar-overflow mb-45">
