@@ -47,27 +47,17 @@
                     <div class="sidebar-widget sidebar-overflow mb-45">
                         <h3 class="sidebar-title">color</h3>
                         <div class="product-color">
-                            <ul>
-                                <li class="red">b</li>
-                                <li class="pink">p</li>
-                                <li class="blue">b</li>
-                                <li class="sky">b</li>
-                                <li class="green">y</li>
-                                <li class="purple">g</li>
-                            </ul>
+                            <div class="col-sm-2 col-md-2">
+                                <label for="hit">
+                                    <input type="checkbox" name="hit" id="hit" @if(request()->has('hit')) checked @endif > Червоний
+                                </label>
+                            </div>
                         </div>
                     </div>
                     <div class="sidebar-widget mb-40">
                         <h3 class="sidebar-title">size</h3>
                         <div class="product-size">
-                            <ul>
-                                <li><a href="#">xl</a></li>
-                                <li><a href="#">m</a></li>
-                                <li><a href="#">l</a></li>
-                                <li><a href="#">ml</a></li>
-                                <li><a href="#">lm</a></li>
-                            </ul>
-                        </div>
+
                     </div>
                     <div class="sidebar-widget mb-40">
                         <h3 class="sidebar-title">tag</h3>
@@ -195,7 +185,7 @@
                 </div>
 
 
-                    {{$products->appends(['query'=>request('query')])->render()}}
+{{--                    {{$products->appends(['query'=>request('query')])->render()}}--}}
             </div>
         </div>
     </div>

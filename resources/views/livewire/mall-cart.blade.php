@@ -61,7 +61,7 @@
                     <div class="row">
                         <div class="col-md-5 ml-auto">
                             <div class="cart-page-total">
-                                <h2>Cart totals</h2>
+                                <h2>Загальна сума покупки</h2>
                                 <ul>
                                     <li>Проміжний підсумок<span>{{\Cart::session(auth()->id())->getSubTotal()}}</span></li>
                                     <li>Всього<span>{{\Cart::session(auth()->id())->getTotal()}}</span></li>

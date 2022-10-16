@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Filters\AbstractFilter;
+use App\Http\Filters\ProductLaptopFilter;
+use App\Http\Requests\ProductsFilterRequest;
 use App\Product;
 use App\Category;
 use Illuminate\Http\Request;
@@ -34,17 +37,27 @@ class ProductController extends Controller
     public function search(Request $request)
     {
 
-        $query = $request->input('query');
+        $query = $request->input('query', 'query');
 
-        $products = Product::where('name','LIKE',"%$query%")->paginate(10);
+        $products = Product::where('price','LIKE',"%$query%")->paginate(10);
+
 
         return view('product.catalog',compact('products'));
     }
 
-    public function show(Product $product)
+    public function filter(ProductsFilterRequest $request)
+    {
+        $date = $request->validated();
+        $filter =app(AbstractFilter::class,['queryParams'=> array_filter($date)]);
+        $product = Product::filter($filter)->get();
+
+    return  view ('product.catalog', compact('product'));
+    }
+
+    public function show(Product $products)
     {
 
-        return view('product.show', compact('product'));
+        return view('product.show', compact('products'));
 
     }
 

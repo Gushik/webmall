@@ -3,10 +3,10 @@
 
 @section('content')
 
-<h2>Checkout</h2>
+<h2>Введіть свої дані</h2>
 
 
-<h3>Shipping Information</h3>
+<h3>Інформація про доставку</h3>
 
 <form action="{{route('orders.store')}}" method="post">
     @csrf

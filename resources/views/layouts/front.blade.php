@@ -1,522 +1,358 @@
-<!doctype html>
-<html class="no-js" lang="en">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Electronics - eCommerce HTML5 Template</title>
-    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.png">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <!-- all css here -->
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="/assets/css/animate.css">
-    <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="/assets/css/themify-icons.css">
-    <link rel="stylesheet" href="/assets/css/pe-icon-7-stroke.css">
-    <link rel="stylesheet" href="/assets/css/icofont.css">
-    <link rel="stylesheet" href="/assets/css/meanmenu.min.css">
-    <link rel="stylesheet" href="/assets/css/jquery-ui.css">
-    <link rel="stylesheet" href="/assets/css/bundle.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <title>Electro - HTML Ecommerce Template</title>
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+
+    <!-- Slick -->
+    <link type="text/css" rel="stylesheet" href="assets/css/slick.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/slick-theme.css"/>
+
+    <!-- nouislider -->
+    <link type="text/css" rel="stylesheet" href="assets/css/nouislider.min.css"/>
+
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
 
 
-    @livewireStyles
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-    <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-
 <body>
-
 <header>
-    <div _ngcontent-rz-client-c81="" class="top-information__inner">
-        <a _ngcontent-rz-client-c81="" tabindex="-1"
-           class="top-information__inner ng-star-inserted"
-           href="https://rozetka.com.ua/ua/promo/lowprices/"
-           target="_self"><img _ngcontent-rz-client-c81=""
-                               loading="lazy" alt=""
-                               class="top-information__picture ng-star-inserted"
-                               src="/assets/img/banner/45size.jpg">
-            <!---->
-        </a>
-        <!---->
-        <!---->
-        <!---->
-    </div>
+    <!-- TOP HEADER -->
+    <div id="top-header">
+        <div class="container">
+            <ul class="header-links pull-left">
+                <li><a href="#"><i class="fa fa-phone"></i> +380 99 23 33 469</a></li>
+                <li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
+                <li><a href="#"><i class="fa fa-map-marker"></i> Луцьк</a></li>
+            </ul>
+            <ul class="header-links pull-right">
+                <li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
+                <li><a href="{{route('my_account')}}"><i class="fa fa-user-o"></i> Мій кабінет</a></li>
+                @auth
+                    <li>
+                        <form action=" {{ url('/logout') }} " method="POST">
+                            @csrf
+                            <input type="submit" value="Вийти"/>
+                        </form>
+                    </li>
+                @else
 
-
-    <div class="header-top-wrapper-2 border-bottom-2">
-        <div class="header-info-wrapper pl-200 pr-200">
-            <div class="header-contact-info">
-                <ul>
-                    <li><i class="pe-7s-call"></i> +38 099 23 33 469</li>
-                    <li><i class="pe-7s-mail"></i> <a href="#">ecommerce@it-tree.com.ua</a></li>
-                </ul>
-            </div>
-            <div class="electronics-login-register">
-                <ul>
-                    <li><a href="#"><i class="pe-7s-users"></i>Мій акаунт</a></li>
-                    <li><a data-toggle="modal" data-target="#exampleCompare" href="#"><i
-                                class="pe-7s-repeat"></i>Порівняйте</a></li>
-                    {{-- <li><a href="wishlist.html"><i class="pe-7s-like"></i>Wishlist</a></li> --}}
-
-                    @auth
-                        <li>
-                            <form action=" {{ url('/logout') }} " method="POST">
-                                @csrf
-                                <input type="submit" value="Вийти"/>
-                            </form>
-                        </li>
-                    @else
-
-                        <li>
-                            <a href="{{url('/login')}}">Логін</a>
-                        </li>
-                        <li>
-                            <a href="{{url('/register')}}">Зареєструватися</a>
-                        </li>
-                    @endauth
-
-                </ul>
-            </div>
+                    <li>
+                        <a href="{{url('/login')}}">Логін</a>
+                    </li>
+                    <li>
+                        <a href="{{url('/register')}}">Зареєструватися</a>
+                    </li>
+                @endauth
+            </ul>
         </div>
     </div>
+    <!-- /TOP HEADER -->
 
-    <div class="header-bottom pt-40 pb-30 clearfix">
-        <div class="header-bottom-wrapper pr-200 pl-200">
-            <div class="logo-3">
-                <a href="{{route('home')}}">
-                    {{--                        <img src="/assets/img/logo/logo-3.png" alt="">--}}
-                    <h1>ROZTOKA</h1>
-                </a>
-            </div>
-            <div class="categories-search-wrapper">
-
-                <div class="categories-wrapper">
-                    <form action="{{route('products.search')}}" method="GET">
-                        <input name="query" placeholder="Я шукаю..." type="text">
-                        <button type="submit"> Пошук</button>
-                    </form>
-                </div>
-            </div>
-            <div class="trace-cart-wrapper">
-                <div class="trace same-style">
-                    {{--                        <div class="same-style-icon">--}}
-                    {{--                            <a href="#"><i class="pe-7s-plane"></i></a>--}}
-                    {{--                        </div>--}}
-                    {{--                        <div class="same-style-text">--}}
-                    {{--                            <a href="#">Product <br>trace</a>--}}
-                    {{--                        </div>--}}
-                </div>
-                <div class="categories-cart same-style">
-                    <div class="same-style-icon">
-                        <a href="{{ route('cart.index') }}"><i class="pe-7s-cart"></i></a>
-                    </div>
-                    <div class="same-style-text">
-                        <a href="{{ route('cart.index') }}">Кошик <br>
-
-                            @auth
-                                {{Cart::session(auth()->id())->getContent()->count()}}
-                            @else
-                                0
-                            @endauth
-
+    <!-- MAIN HEADER -->
+    <div id="header">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <!-- LOGO -->
+                <div class="col-md-3">
+                    <div class="header-logo">
+                        <a href="{{route('home')}}" class="logo">
+                            <img src="/assets/img/photo_r25.png" alt="">
                         </a>
                     </div>
                 </div>
-            </div>
-            <div class="mobile-menu-area electro-menu d-md-block col-md-12 col-lg-12 col-12 d-lg-none d-xl-none">
-                <div class="mobile-menu">
-                    <nav id="mobile-menu-active">
-                        <ul class="menu-overflow">
-                            <li><a href="{{url('/')}}">HOME</a>
+                <!-- /LOGO -->
 
-                            </li>
-                            <li><a href="#">BLOG</a>
+                <!-- SEARCH BAR -->
+                <div class="col-md-6">
+                    <div class="header-search">
+                        <form action="{{route('products.search')}}" method="GET">
+                            <select class="input-select">
 
-                            </li>
-                            <li><a href="#"> Contact </a></li>
-                        </ul>
-                    </nav>
+                                @foreach($categories as $category)
+                                    <optgroup label="{{$category->name}}">
+                                        @php
+                                            $children = $category->children;
+                                        @endphp
+                                        @if($children->isNotEmpty())
+
+                                            @foreach ($children as $child)
+
+                                                <option value="">
+                                                    {{$child->name}}
+                                                </option>
+
+                                            @endforeach
+
+                                        @endif
+
+                                        @endforeach
+
+                                    </optgroup>
+                            </select>
+                            <input class="input" placeholder="Я шукаю...">
+                            <button class="search-btn">Пошук</button>
+                        </form>
+                    </div>
                 </div>
+                <!-- /SEARCH BAR -->
+
+                <!-- ACCOUNT -->
+                <div class="col-md-3 clearfix">
+                    <div class="header-ctn">
+                        <!-- Wishlist -->
+                        <div>
+                            <a href="#">
+                                <i class="fa fa-heart-o"></i>
+                                <span>Список бажань</span>
+                                <div class="qty">2</div>
+                            </a>
+                        </div>
+                        <!-- /Wishlist -->
+
+                        <!-- Cart -->
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                <i class="fa fa-shopping-cart"></i>
+
+                                <a href="{{ route('cart.index') }}">Кошик <br>
+
+                                    @auth
+                                        {{Cart::session(auth()->id())->getContent()->count()}}
+                                    @else
+                                        0
+                                    @endauth
+
+                                </a>
+                            </a>
+{{--                            <div class="cart-dropdown">--}}
+{{--                                <div class="cart-list">--}}
+{{--                                    <div class="product-widget">--}}
+{{--                                        <div class="product-img">--}}
+{{--                                            <img src="assets/img/product01.png" alt="">--}}
+{{--                                        </div>--}}
+{{--                                        <div class="product-body">--}}
+{{--                                            <h3 class="product-name"><a href="#">product name goes here</a></h3>--}}
+{{--                                            <h4 class="product-price"><span class="qty">1x</span>$980.00</h4>--}}
+{{--                                        </div>--}}
+{{--                                        <button class="delete"><i class="fa fa-close"></i></button>--}}
+{{--                                    </div>--}}
+
+{{--                                    <div class="product-widget">--}}
+{{--                                        <div class="product-img">--}}
+{{--                                            <img src="assets/img/product02.png" alt="">--}}
+{{--                                        </div>--}}
+{{--                                        <div class="product-body">--}}
+{{--                                            <h3 class="product-name"><a href="#">product name goes here</a></h3>--}}
+{{--                                            <h4 class="product-price"><span class="qty">3x</span>$980.00</h4>--}}
+{{--                                        </div>--}}
+{{--                                        <button class="delete"><i class="fa fa-close"></i></button>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="cart-summary">--}}
+{{--                                    <small>3 Item(s) selected</small>--}}
+{{--                                    <h5>SUBTOTAL: $2940.00</h5>--}}
+{{--                                </div>--}}
+{{--                                <div class="cart-btns">--}}
+{{--                                    <a href="#">View Cart</a>--}}
+{{--                                    <a href="#">Checkout <i class="fa fa-arrow-circle-right"></i></a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+                        <!-- /Cart -->
+
+                        <!-- Menu Toogle -->
+                        <div class="menu-toggle">
+                            <a href="#">
+                                <i class="fa fa-bars"></i>
+                                <span>Menu</span>
+                            </a>
+                        </div>
+                        <!-- /Menu Toogle -->
+                    </div>
+                </div>
+                <!-- /ACCOUNT -->
             </div>
+            <!-- row -->
         </div>
     </div>
+    <!-- container -->
+    </div>
+    <!-- /MAIN HEADER -->
 </header>
-<!-- header end -->
+<!-- /HEADER -->
+<!-- NAVIGATION -->
+<nav id="navigation">
+    <!-- container -->
+    <div class="container">
+        <!-- responsive-nav -->
+        <div id="responsive-nav">
+            <!-- NAV -->
+            <ul class="main-nav nav navbar-nav">
+                <li class="active"><a href="{{route('home')}}">Home</a></li>
+                <li><a href="#">Гарячі пропозиції</a></li>
+                <li><a class="popup-open" href="#">Каталог</a>
 
+                    <div class="popup-black">
+                        <div class="popup">
+                            @include('_category-penal-list')
 
-@if(session('message'))
+                        </div>
+                    </div></li>
 
-    <div class="alert alert-success text-center" role="alert">
-        <strong>{{ session('message') }}</strong>
+                <li><a href="#">Топ продажів</a></li>
+
+                <li><a href="#">Розпродаж</a></li>
+            </ul>
+            <!-- /NAV -->
+        </div>
+        <!-- /responsive-nav -->
     </div>
-@endif
+    <!-- /container -->
+</nav>
+<!-- /NAVIGATION -->
 
-@if(session('error'))
+@yield('content'))
 
-    <div class="alert alert-danger text-center" role="alert">
-        <strong>{{session('error')}} </strong>
+
+<!-- FOOTER -->
+<footer id="footer">
+    <!-- top footer -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-3 col-xs-6">
+                    <div class="footer">
+                        <h3 class="footer-title">Про нас</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                            ut.</p>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fa fa-map-marker"></i>Луцьк</a></li>
+                            <li><a href="#"><i class="fa fa-phone"></i>+380 99 23 33 469</a></li>
+                            <li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-xs-6">
+                    <div class="footer">
+                        <h3 class="footer-title">Допомога</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Доставка та оплата</a></li>
+                            <li><a href="#">Кредит</a></li>
+                            <li><a href="#">Гарантія</a></li>
+                            <li><a href="#">Повернення товару</a></li>
+                            <li><a href="#">Сервісні центри</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="clearfix visible-xs"></div>
+
+                <div class="col-md-3 col-xs-6">
+                    <div class="footer">
+                        <h3 class="footer-title">Сервіси</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Бонусний рахунок</a></li>
+                            <li><a href="#">Roztoka Premium</a></li>
+                            <li><a href="#">Подарункові сертифікати</a></li>
+                            <li><a href="#">Roztoka Обмін</a></li>
+                            <li><a href="#">Тури та відпочинок</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-xs-6">
+                    <div class="footer">
+                        <h3 class="footer-title">Партнерам
+
+
+
+                        </h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Продавати на Розетці</a></li>
+                            <li><a href="#">Співпраця з нами</a></li>
+                            <li><a href="#">Франчайзинг</a></li>
+                            <li><a href="#">Оренда приміщень</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
     </div>
-@endif
+    <!-- /top footer -->
 
-
-@yield('content')
-
-
-
-    <footer class="footer-area">
-        <div class="footer-top-3 black-bg pt-75 pb-25">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-xl-4">
-                        <div class="footer-widget mb-40">
-                            <h3 class="footer-widget-title-3">Contact Us</h3>
-                            <div class="footer-info-wrapper-2">
-                                <div class="footer-address-electro">
-                                    <div class="footer-info-icon2">
-                                        <span>Address:</span>
-                                    </div>
-                                    <div class="footer-info-content2">
-                                        <p>77 Seventh Streeth Banasree
-                                            <br>Road Rampura -2100 Dhaka</p>
-                                    </div>
-                                </div>
-                                <div class="footer-address-electro">
-                                    <div class="footer-info-icon2">
-                                        <span>Phone:</span>
-                                    </div>
-                                    <div class="footer-info-content2">
-                                        <p>+11 (019) 2518 4203
-                                            <br>+11 (251) 2223 3353</p>
-                                    </div>
-                                </div>
-                                <div class="footer-address-electro">
-                                    <div class="footer-info-icon2">
-                                        <span>Email:</span>
-                                    </div>
-                                    <div class="footer-info-content2">
-                                        <p><a href="#">domain@mail.com</a>
-                                            <br><a href="#">company@domain.info</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-xl-3">
-                        <div class="footer-widget mb-40">
-                            <h3 class="footer-widget-title-3">My Account</h3>
-                            <div class="footer-widget-content-3">
-                                <ul>
-                                    <li><a href="login.html">Login Hare</a></li>
-                                    <li><a href="cart.html">Cart History</a></li>
-                                    <li><a href="checkout.html"> Payment History</a></li>
-                                    <li><a href="shop.html">Product Tracking</a></li>
-                                    <li><a href="register.html">Register</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-6 col-xl-2">
-                        <div class="footer-widget mb-40">
-                            <h3 class="footer-widget-title-3">Information</h3>
-                            <div class="footer-widget-content-3">
-                                <ul>
-                                    <li><a href="about-us.html">About Us</a></li>
-                                    <li><a href="#">Our Service</a></li>
-                                    <li><a href="#">Pricing Plan</a></li>
-                                    <li><a href="#"> Vendor Detail</a></li>
-                                    <li><a href="#">Affiliate</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-xl-3">
-                        <div class="footer-widget widget-right mb-40">
-                            <h3 class="footer-widget-title-3">Service</h3>
-                            <div class="footer-widget-content-3">
-                                <ul>
-                                    <li><a href="#">Product Service</a></li>
-                                    <li><a href="#">Payment Service</a></li>
-                                    <li><a href="#"> Discount Service</a></li>
-                                    <li><a href="#">Shopping Service</a></li>
-                                    <li><a href="#">Promotional Add</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <!-- bottom footer -->
+    <div id="bottom-footer" class="section">
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <ul class="footer-payments">
+                        <li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
+                        <li><a href="#"><i class="fa fa-credit-card"></i></a></li>
+                        <li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
+                        <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
+                        <li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
+                        <li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
+                    </ul>
+                    <span class="copyright">
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i
+                            class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                                                                                target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							</span>
                 </div>
             </div>
+            <!-- /row -->
         </div>
-        <div class="footer-middle black-bg-2 pt-35 pb-40">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4">
-                        <div class="footer-services-wrapper mb-30">
-                            <div class="footer-services-icon">
-                                <i class="pe-7s-car"></i>
-                            </div>
-                            <div class="footer-services-content">
-                                <h3>Free Shipping</h3>
-                                <p>Free Shipping on Bangladesh</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4">
-                        <div class="footer-services-wrapper mb-30">
-                            <div class="footer-services-icon">
-                                <i class="pe-7s-shield"></i>
-                            </div>
-                            <div class="footer-services-content">
-                                <h3>Money Guarentee</h3>
-                                <p>Free Shipping on Bangladesh</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4">
-                        <div class="footer-services-wrapper mb-30">
-                            <div class="footer-services-icon">
-                                <i class="pe-7s-headphones"></i>
-                            </div>
-                            <div class="footer-services-content">
-                                <h3>Online Support</h3>
-                                <p>Free Shipping on Bangladesh</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom  black-bg pt-25 pb-30">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-5">
-                        <div class="footer-menu">
-                            <nav>
-                                <ul>
-                                    <li><a href="#">Privacy Policy </a></li>
-                                    <li><a href="blog.html"> Blog</a></li>
-                                    <li><a href="#">Help Center</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-7">
-                        <div class="copyright f-right mrg-5">
-                            <p>
-                                Copyright ©
-                                <a href="https://hastech.company/">HasTech</a> 2018 . All Right Reserved.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-<!-- modal -->
-<div class="modal fade" id="exampleCompare" tabindex="-1" role="dialog" aria-hidden="true">
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span class="pe-7s-close" aria-hidden="true"></span>
-    </button>
-    <div class="modal-dialog modal-compare-width" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <form action="#">
-                    <div class="table-content compare-style table-responsive">
-                        <table>
-                            <thead>
-                            <tr>
-                                <th></th>
-                                <th>
-                                    <a href="#">Remove <span>x</span></a>
-                                    <img src="/assets/img/cart/4.jpg" alt="">
-                                    <p>Blush Sequin Top </p>
-                                    <span>$75.99</span>
-                                    <a class="compare-btn" href="#">Add to cart</a>
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="compare-title">
-                                    <h4>Description </h4>
-                                </td>
-                                <td class="compare-dec compare-common">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                        industry. Lorem Ipsum has beenin the stand ard dummy text ever since the
-                                        1500s, when an unknown printer took a galley</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="compare-title">
-                                    <h4>Sku </h4>
-                                </td>
-                                <td class="product-none compare-common">
-                                    <p>-</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="compare-title">
-                                    <h4>Availability </h4>
-                                </td>
-                                <td class="compare-stock compare-common">
-                                    <p>In stock</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="compare-title">
-                                    <h4>Weight </h4>
-                                </td>
-                                <td class="compare-none compare-common">
-                                    <p>-</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="compare-title">
-                                    <h4>Dimensions </h4>
-                                </td>
-                                <td class="compare-stock compare-common">
-                                    <p>N/A</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="compare-title">
-                                    <h4>brand </h4>
-                                </td>
-                                <td class="compare-brand compare-common">
-                                    <p>HasTech</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="compare-title">
-                                    <h4>color </h4>
-                                </td>
-                                <td class="compare-color compare-common">
-                                    <p>Grey, Light Yellow, Green, Blue, Purple, Black </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="compare-title">
-                                    <h4>size </h4>
-                                </td>
-                                <td class="compare-size compare-common">
-                                    <p>XS, S, M, L, XL, XXL </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="compare-title"></td>
-                                <td class="compare-price compare-common">
-                                    <p>$75.99 </p>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </form>
-            </div>
-        </div>
+        <!-- /container -->
     </div>
-</div>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span class="pe-7s-close" aria-hidden="true"></span>
-    </button>
-    <div class="modal-dialog modal-quickview-width" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="qwick-view-left">
-                    <div class="quick-view-learg-img">
-                        <div class="quick-view-tab-content tab-content">
-                            <div class="tab-pane active show fade" id="modal1" role="tabpanel">
-                                <img src="/assets/img/quick-view/l1.jpg" alt="">
-                            </div>
-                            <div class="tab-pane fade" id="modal2" role="tabpanel">
-                                <img src="/assets/img/quick-view/l2.jpg" alt="">
-                            </div>
-                            <div class="tab-pane fade" id="modal3" role="tabpanel">
-                                <img src="/assets/img/quick-view/l3.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="quick-view-list nav" role="tablist">
-                        <a class="active" href="#modal1" data-toggle="tab" role="tab">
-                            <img src="/assets/img/quick-view/s1.jpg" alt="">
-                        </a>
-                        <a href="#modal2" data-toggle="tab" role="tab">
-                            <img src="/assets/img/quick-view/s2.jpg" alt="">
-                        </a>
-                        <a href="#modal3" data-toggle="tab" role="tab">
-                            <img src="/assets/img/quick-view/s3.jpg" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="qwick-view-right">
-                    <div class="qwick-view-content">
-                        <h3>Handcrafted Supper Mug</h3>
-                        <div class="price">
-                            <span class="new">$90.00</span>
-                            <span class="old">$120.00 </span>
-                        </div>
-                        <div class="rating-number">
-                            <div class="quick-view-rating">
-                                <i class="pe-7s-star"></i>
-                                <i class="pe-7s-star"></i>
-                                <i class="pe-7s-star"></i>
-                                <i class="pe-7s-star"></i>
-                                <i class="pe-7s-star"></i>
-                            </div>
-                            <div class="quick-view-number">
-                                <span>2 Ratting (S)</span>
-                            </div>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adip elit, sed do tempor incididun ut labore et
-                            dolore magna aliqua. Ut enim ad mi , quis nostrud veniam exercitation .</p>
-                        <div class="quick-view-select">
-                            <div class="select-option-part">
-                                <label>Size*</label>
-                                <select class="select">
-                                    <option value="">- Please Select -</option>
-                                    <option value="">900</option>
-                                    <option value="">700</option>
-                                </select>
-                            </div>
-                            <div class="select-option-part">
-                                <label>Color*</label>
-                                <select class="select">
-                                    <option value="">- Please Select -</option>
-                                    <option value="">orange</option>
-                                    <option value="">pink</option>
-                                    <option value="">yellow</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="quickview-plus-minus">
-                            <div class="cart-plus-minus">
-                                <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
-                            </div>
-                            <div class="quickview-btn-cart">
-                                <a class="btn-hover-black" href="#">add to cart</a>
-                            </div>
-                            <div class="quickview-btn-wishlist">
-                                <a class="btn-hover" href="#"><i class="pe-7s-like"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    <!-- /bottom footer -->
+</footer>
+<!-- /FOOTER -->
 
+<!-- jQuery Plugins -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/slick.min.js"></script>
+<script src="assets/js/nouislider.min.js"></script>
+<script src="assets/js/jquery.zoom.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/modal.jquery.js"></script>
 
-<!-- all js here -->
 <script src="/assets/js/vendor/jquery-1.12.0.min.js"></script>
 <script src="/assets/js/popper.js"></script>
-<script src="/assets/js/bootstrap.min.js"></script>
+
 <script src="/assets/js/jquery.magnific-popup.min.js"></script>
 <script src="/assets/js/isotope.pkgd.min.js"></script>
 <script src="/assets/js/imagesloaded.pkgd.min.js"></script>
@@ -525,9 +361,9 @@
 <script src="/assets/js/ajax-mail.js"></script>
 <script src="/assets/js/owl.carousel.min.js"></script>
 <script src="/assets/js/plugins.js"></script>
-<script src="/assets/js/main.js"></script>
 
-@livewireScripts
 </body>
-
 </html>
+
+
+

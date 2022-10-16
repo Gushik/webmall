@@ -17,9 +17,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/contact', 'HomeController@contact')->name('contact');
+Route::get('/my_account','HomeController@contact')->name('my_account');
+Route::get ('product-card','HomeController@product-card')->name('product-card');
 
 
+Route::get('/products/filter', 'ProductController@filter')->name('products.filter');
 Route::get('/products/search', 'ProductController@search')->name('products.search');
+Route::get('/products/show', 'ProductController@show')->name('products.show');
 Route::resource('products', 'ProductController');
 
 Route::get('/add-to-cart/{product}', 'CartController@add')->name('cart.add')->middleware('auth');
