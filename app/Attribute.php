@@ -6,7 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Attribute extends Model
 {
-
+//public function Atributes()
+//{
+//    return $this->hasMany(Attribute::class);
+//}
 
     public function values()
     {

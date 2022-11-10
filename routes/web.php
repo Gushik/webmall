@@ -17,14 +17,25 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/contact', 'HomeController@contact')->name('contact');
-Route::get('/my_account','HomeController@contact')->name('my_account');
+Route::get('/my_account','HomeController@my_account')->name('my_account');
+
+//Route::get('/my_account','HomeController@allUser')->name('allUser');
 Route::get ('product-card','HomeController@product-card')->name('product-card');
+Route::get ('/hot-offers','HomeController@hotOffers')->name('hot-offers');
 
-
+Route::get ('/product/_single_product','HomeController@attribute')->name('product._single_product');
+Route::get ('/test','AttributeController@index')->name('test');
 Route::get('/products/filter', 'ProductController@filter')->name('products.filter');
 Route::get('/products/search', 'ProductController@search')->name('products.search');
+Route::get('/products/searchBrend', 'ProductController@searchBrend')->name('products.searchBrend');
 Route::get('/products/show', 'ProductController@show')->name('products.show');
 Route::resource('products', 'ProductController');
+
+
+
+//Route::get('/index', 'AttributeController@index')->name('index');
+Route::resource('attribute','AttributeController');
+Route::resource('categories','CategoryController');
 
 Route::get('/add-to-cart/{product}', 'CartController@add')->name('cart.add')->middleware('auth');
 Route::get('/cart', 'CartController@index')->name('cart.index')->middleware('auth');

@@ -38,7 +38,7 @@ class User extends \TCG\Voyager\Models\User
     ];
 
 
-    public function shop()
+    public function shop(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(Shop::class, 'user_id');
     }

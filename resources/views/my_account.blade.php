@@ -1,7 +1,18 @@
 @extends('layouts.front')
 
 @section('content')
-    <div>
-<h1>{{$user->name}}</h1>
-    </div>
+    <h1>МІй кабінет</h1>
+    @auth
+
+
+            <div class="products-tabs">
+                <!-- tab -->
+                <div id="tab1" class="tab-pane active">
+                    {{$allUser->name}}
+                    {{$allUser->email}}
+                    {{$allUser->role_id}}
+                </div>
+            </div>
+
+    @endauth
 @endsection

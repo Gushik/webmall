@@ -1,32 +1,46 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Electro - HTML Ecommerce Template</title>
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="/assets/css/bootstrap.min.css"/>
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <!-- Slick -->
+    <link type="text/css" rel="stylesheet" href="/assets/css/slick.css"/>
+    <link type="text/css" rel="stylesheet" href="/assets/css/slick-theme.css"/>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
+    <!-- nouislider -->
+    <link type="text/css" rel="stylesheet" href="/assets/css/nouislider.min.css"/>
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="/assets/css/style.css"/>
+    <link type="text/css" rel="stylesheet" href="/assets/css/style-home.css"/>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+{{--                    {{ config('app.name', 'Roztoka') }}--}}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

@@ -22,7 +22,7 @@ class CartUpdateForm extends Component
     public function updateCart()
     {
 
-        \Cart::session(auth()->id())->update($this->item['id'], [
+        Cart::session(auth()->id())->update($this->item['id'], [
             'quantity' => [
                 'relative' => false,
                 'value' => $this->quantity

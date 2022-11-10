@@ -2,6 +2,10 @@
 
 namespace App;
 
+use App\Models\Filters\Category\CategorySeach;
+use App\Models\Filters\User\UserSeach;
+use http\Request;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use TCG\Voyager\Models\Category as ModelsCategory;
@@ -39,5 +43,15 @@ class Category extends ModelsCategory
         return $allProducts;
 
 
+    }
+
+
+
+
+    public function getCategoriesBySearch(Request $request )  : Builder
+
+    {
+        $builder = (new CategorySeach())->apply($request);
+        return $builder;
     }
 }

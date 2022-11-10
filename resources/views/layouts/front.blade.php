@@ -12,21 +12,21 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
     <!-- Bootstrap -->
-    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="/assets/css/bootstrap.min.css"/>
 
     <!-- Slick -->
-    <link type="text/css" rel="stylesheet" href="assets/css/slick.css"/>
-    <link type="text/css" rel="stylesheet" href="assets/css/slick-theme.css"/>
+    <link type="text/css" rel="stylesheet" href="/assets/css/slick.css"/>
+    <link type="text/css" rel="stylesheet" href="/assets/css/slick-theme.css"/>
 
     <!-- nouislider -->
-    <link type="text/css" rel="stylesheet" href="assets/css/nouislider.min.css"/>
+    <link type="text/css" rel="stylesheet" href="/assets/css/nouislider.min.css"/>
 
     <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
 
     <!-- Custom stlylesheet -->
-    <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
-
+    <link type="text/css" rel="stylesheet" href="/assets/css/style.css"/>
+    <link type="text/css" rel="stylesheet" href="/assets/css/style-home.css"/>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -59,7 +59,13 @@
                 @else
 
                     <li>
-                        <a href="{{url('/login')}}">Логін</a>
+                        <a class="popup-open" href="#">Логін</a>
+                        <div class="popup-black">
+                            <div class="popup">
+                                @include('auth.login')
+
+                            </div>
+                        </div>
                     </li>
                     <li>
                         <a href="{{url('/register')}}">Зареєструватися</a>
@@ -90,30 +96,30 @@
                 <div class="col-md-6">
                     <div class="header-search">
                         <form action="{{route('products.search')}}" method="GET">
-                            <select class="input-select">
+{{--                            <select class="input-select">--}}
 
-                                @foreach($categories as $category)
-                                    <optgroup label="{{$category->name}}">
-                                        @php
-                                            $children = $category->children;
-                                        @endphp
-                                        @if($children->isNotEmpty())
+{{--                                @foreach($categories as $category)--}}
+{{--                                    <optgroup label="{{$category->name}}">--}}
+{{--                                        @php--}}
+{{--                                            $children = $category->children;--}}
+{{--                                        @endphp--}}
+{{--                                        @if($children->isNotEmpty())--}}
 
-                                            @foreach ($children as $child)
+{{--                                            @foreach ($children as $child)--}}
 
-                                                <option value="">
-                                                    {{$child->name}}
-                                                </option>
+{{--                                                <option value="">--}}
+{{--                                                    {{$child->name}}--}}
+{{--                                                </option>--}}
 
-                                            @endforeach
+{{--                                            @endforeach--}}
 
-                                        @endif
+{{--                                        @endif--}}
 
-                                        @endforeach
+{{--                                        @endforeach--}}
 
-                                    </optgroup>
-                            </select>
-                            <input class="input" placeholder="Я шукаю...">
+{{--                                    </optgroup>--}}
+{{--                            </select>--}}
+                            <input name="input" placeholder="Я шукаю...">
                             <button class="search-btn">Пошук</button>
                         </form>
                     </div>
@@ -143,7 +149,7 @@
                                     @auth
                                         {{Cart::session(auth()->id())->getContent()->count()}}
                                     @else
-                                        0
+                                       0
                                     @endauth
 
                                 </a>
@@ -184,14 +190,7 @@
 {{--                        </div>--}}
                         <!-- /Cart -->
 
-                        <!-- Menu Toogle -->
-                        <div class="menu-toggle">
-                            <a href="#">
-                                <i class="fa fa-bars"></i>
-                                <span>Menu</span>
-                            </a>
-                        </div>
-                        <!-- /Menu Toogle -->
+
                     </div>
                 </div>
                 <!-- /ACCOUNT -->
@@ -213,7 +212,7 @@
             <!-- NAV -->
             <ul class="main-nav nav navbar-nav">
                 <li class="active"><a href="{{route('home')}}">Home</a></li>
-                <li><a href="#">Гарячі пропозиції</a></li>
+                <li><a href="{{route('hot-offers')}}">Гарячі пропозиції</a></li>
                 <li><a class="popup-open" href="#">Каталог</a>
 
                     <div class="popup-black">
@@ -235,7 +234,7 @@
 </nav>
 <!-- /NAVIGATION -->
 
-@yield('content'))
+@yield('content')
 
 
 <!-- FOOTER -->
@@ -350,17 +349,17 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/modal.jquery.js"></script>
 
-<script src="/assets/js/vendor/jquery-1.12.0.min.js"></script>
-<script src="/assets/js/popper.js"></script>
+<script src="assets/js/vendor/jquery-1.12.0.min.js"></script>
+<script src="assets/js/popper.js"></script>
 
-<script src="/assets/js/jquery.magnific-popup.min.js"></script>
-<script src="/assets/js/isotope.pkgd.min.js"></script>
-<script src="/assets/js/imagesloaded.pkgd.min.js"></script>
-<script src="/assets/js/jquery.counterup.min.js"></script>
-<script src="/assets/js/waypoints.min.js"></script>
-<script src="/assets/js/ajax-mail.js"></script>
-<script src="/assets/js/owl.carousel.min.js"></script>
-<script src="/assets/js/plugins.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/imagesloaded.pkgd.min.js"></script>
+<script src="assets/js/jquery.counterup.min.js"></script>
+<script src="assets/js/waypoints.min.js"></script>
+<script src="assets/js/ajax-mail.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/plugins.js"></script>
 
 </body>
 </html>

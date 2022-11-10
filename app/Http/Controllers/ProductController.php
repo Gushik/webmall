@@ -37,9 +37,19 @@ class ProductController extends Controller
     public function search(Request $request)
     {
 
-        $query = $request->input('query', 'query');
+        $query = $request->input('input', 'input');
 
-        $products = Product::where('price','LIKE',"%$query%")->paginate(10);
+        $products = Product::where('name','LIKE',"%$query%")->paginate(10);
+
+
+        return view('product.catalog',compact('products'));
+    }
+    public function searchBrend(Request $request)
+    {
+
+        $query = $request->input('input', 'input');
+
+        $products = Category::where('name','LIKE',"%$query%")->paginate(10);
 
 
         return view('product.catalog',compact('products'));
@@ -54,10 +64,12 @@ class ProductController extends Controller
     return  view ('product.catalog', compact('product'));
     }
 
-    public function show(Product $products)
+    public function show(Product $product)
     {
 
-        return view('product.show', compact('products'));
+        $products = Product::find($product->id);
+//        dd($product );
+        return view('product.show', ['product'=>$products,]);
 
     }
 

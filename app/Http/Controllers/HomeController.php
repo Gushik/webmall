@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Attribute;
 use App\Http\Filters\ProductLaptopFilter;
 use App\Http\Requests\ProductsFilterRequest;
 use App\Product;
 
+use App\User;
 use Illuminate\Http\Request;
 use App\Category;
 
@@ -31,10 +33,16 @@ class HomeController extends Controller
         $products = Product::with('shop.owner')->take(30)->paginate(15);
 
         $categories = Category::with('children.children')->whereNull('parent_id')->get();
+        $attributes = Attribute::all();
 
-        return view('home', ['allProducts' => $products,'categories'=>$categories]);
+        return view('home', ['allProducts' => $products,'categories'=>$categories,'allAttribute' => $attributes]);
     }
+    public function attribute()
+    {
+        $attributes = Attribute::take(5)->get();
 
+        return view('product._single_product', ['allAttribute' =>  $attributes]);
+    }
     public function contact()
     {
         return view('contact');
@@ -52,11 +60,26 @@ class HomeController extends Controller
     }
     public function my_account()
     {
-        return view('my_account');
+
+
+        $user= auth()->id();
+        $users = User::find($user);
+
+        return view('my_account', ['allUser' => $users,]);
+
     }
+
     public function productCard()
     {
         return view('product-card');
+    }
+    public function hotOffers()
+    { $products = Product::with('shop.owner')->take(30)->paginate(15);
+
+        $categories = Category::with('children.children')->whereNull('parent_id')->get();
+
+        return view('product.hot_offers', ['allProducts' => $products,'categories'=>$categories]);
+
     }
 
 }

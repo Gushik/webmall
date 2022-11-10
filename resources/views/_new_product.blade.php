@@ -1,6 +1,5 @@
 <!-- SECTION -->
-<div >
-    <div >
+<div class="section">
         <!-- container -->
         <div class="container">
             <!-- row -->
@@ -50,6 +49,6 @@
             <!-- /row -->
         </div>
         <!-- /container -->
-    </div>
+</div>
     <!-- /SECTION -->
 

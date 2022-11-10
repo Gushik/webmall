@@ -14,12 +14,12 @@ class Product extends Model
 {
 
     use HasFactory;
-
+   use Filterable;
     protected $guarded = false;
 
-    // protected $casts=[
-    //     'product_attributes'=>'array'
-    // ];
+     protected $casts=[
+         'product_attributes'=>'array'
+     ];
 
     protected static function booted()
     {
