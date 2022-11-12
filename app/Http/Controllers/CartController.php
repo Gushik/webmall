@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Coupon;
-use App\Product;
+use App\Models\Coupon;
+use App\Models\Product;
 use Cart;
-use Illuminate\Http\Request;
 
 class CartController extends Controller
 {

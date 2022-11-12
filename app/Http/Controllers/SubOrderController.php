@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\SubOrder;
-use Illuminate\Http\Request;
+use App\Models\SubOrder;
 
 class SubOrderController extends Controller
 {

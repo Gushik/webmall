@@ -2,11 +2,9 @@
 
 namespace App\Providers;
 
-use App\Shop;
-use App\Policies\ShopPolicy;
-use Illuminate\Support\Facades\Gate;
+use App\Models\Shop;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-use PhpParser\Node\Stmt\TryCatch;
+use Illuminate\Support\Facades\Gate;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -16,7 +14,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        // 'App\Model' => 'App\Policies\ModelPolicy',
+
         // Shop::class => ShopPolicy::class,
     ];
 

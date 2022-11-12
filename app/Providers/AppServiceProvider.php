@@ -2,12 +2,12 @@
 
 namespace App\Providers;
 
-use App\Shop;
-use App\Category;
+use App\Models\Category;
+use App\Models\Shop;
 use App\Observers\ShopObserver;
 use Illuminate\Support\Facades\Schema;
-use TCG\Voyager\Facades\Voyager;
 use Illuminate\Support\ServiceProvider;
+use TCG\Voyager\Facades\Voyager;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -18,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        Voyager::useModel('Category', \App\Category::class);
+        Voyager::useModel('Category', \App\Models\Category::class);
     }
 
     /**

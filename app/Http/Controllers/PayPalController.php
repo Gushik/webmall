@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Order;
 use App\Mail\OrderPaid;
+use App\Models\Order;
 use App\Services\PaypalService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;

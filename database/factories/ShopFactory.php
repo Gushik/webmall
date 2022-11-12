@@ -1,14 +1,23 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+namespace Database\Factories;
 
-use App\Shop;
-use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(Shop::class, function (Faker $faker) {
-    return [
-        'name'=> $faker->sentence(2),
-        'description'=> $faker->sentence(20),
-        'is_active'=> true
-    ];
-});
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Shop>
+ */
+class ShopFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition()
+    {
+        return [
+            //
+        ];
+    }
+}

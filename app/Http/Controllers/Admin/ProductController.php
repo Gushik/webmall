@@ -3,14 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Product;
-use Illuminate\Http\Request;
-use TCG\Voyager\Facades\Voyager;
-use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use TCG\Voyager\Events\BreadDataDeleted;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use TCG\Voyager\Database\Schema\SchemaManager;
+use TCG\Voyager\Events\BreadDataDeleted;
+use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Http\Controllers\VoyagerBaseController;
 
 class ProductController extends VoyagerBaseController

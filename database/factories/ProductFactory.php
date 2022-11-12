@@ -1,15 +1,20 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Product>
+ */
+class ProductFactory extends Factory
+{
 
-use App\Product;
-use Faker\Generator as Faker;
-
-$factory->define(Product::class, function (Faker $faker) {
-    return [
-        'name' => $faker->sentence(2),
-        'description' => $faker->sentence(20),
-        'price' => $faker->numberBetween(100, 5000),
-
-    ];
-});
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition()
+    {
+        return [
+            //
+        ];
+    }
+}

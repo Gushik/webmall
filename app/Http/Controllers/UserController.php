@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Filters\ProductLaptopFilter;
-use App\Http\Requests\ProductsFilterRequest;
-use App\Product;
-
-use App\User;
-use Illuminate\Http\Request;
-use App\Category;
+use App\Models\Category;
+use App\Models\Product;
+use App\Models\User;
 
 
 class UserController extends Controller

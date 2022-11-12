@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Jobs\MonitorOrder;
-use App\Order;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller

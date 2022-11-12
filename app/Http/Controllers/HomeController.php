@@ -5,11 +5,9 @@ namespace App\Http\Controllers;
 use App\Attribute;
 use App\Http\Filters\ProductLaptopFilter;
 use App\Http\Requests\ProductsFilterRequest;
+use App\Models\Category;
+use App\Models\User;
 use App\Product;
-
-use App\User;
-use Illuminate\Http\Request;
-use App\Category;
 
 class HomeController extends Controller
 {

@@ -2,12 +2,8 @@
 
 namespace App\Http\Controllers\Seller;
 
-use App\Order;
-use App\Product;
-use App\SubOrder;
-use App\OrderItem;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\SubOrder;
 
 class OrderController extends Controller
 {

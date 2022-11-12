@@ -1,15 +1,13 @@
 @component('mail::message')
-# Shop activation request
+    # Отримано заявку на реєстрацію нового магазину:
 
-Please activate shop. Here are shop details.
+    Від: {{$shop->owner->name}},<br>
+    Назва магазину: {{$shop->name}}
 
-Shop Name : {{$shop->name}}
-Shop Owner : {{$shop->owner->name}}
+    @component('mail::button', ['url' => url('/admin/shops')])
+        Перейти
+    @endcomponent
 
-@component('mail::button', ['url' => url('/admin/shops')])
-Manage Shops
-@endcomponent
-
-Thanks,<br>
-{{ config('app.name') }}
+    <br>
+    {{ config('app.name') }}
 @endcomponent

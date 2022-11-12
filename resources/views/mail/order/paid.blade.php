@@ -1,36 +1,33 @@
 @component('mail::message')
-# Invoice Paid
+# Повідомлення про оплату.
 
-Thanks for the purchase
-
-Here is your receipt
+Дякуємо за покупку в нашому магазині!
 
 <table class="table">
     <thead>
-        <tr>
-            <th>Product name</th>
-            <th>quantity</th>
-            <th>price</th>
-        </tr>
+    <tr>
+        <th>Назва:</th>
+        <th>Кількість:</th>
+        <th>Ціна:</th>
+    </tr>
     </thead>
     <tbody>
-        @foreach($order->items as $item)
+    @foreach($order->items as $item)
         <tr>
-            <td scope="row">{{ $item->name }}</td>
-            <td>{{ $item->pivot->quantity }}</td>
-            <td>{{ $item->pivot->price }}</td>
+            <td>{{$item->name}}</td>
+            <td>{{$item->pivot->quantity}} шт.</td>
+            <td>{{$item->pivot->price}} грн.</td>
         </tr>
-        @endforeach
+    @endforeach
     </tbody>
 </table>
 
-Total : {{$order->grand_total}}
+Загальна сума: {{$order->grand_total}} грн.
 
-
-@component('mail::button', ['url' => ''])
-Button Text
+@component('mail::button', ['url' => 'http://roztoka/home'])
+    Повернутись до магазину
 @endcomponent
 
-Thanks,<br>
+Дякуємо,<br>
 {{ config('app.name') }}
 @endcomponent

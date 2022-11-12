@@ -2,8 +2,8 @@
 
 namespace App\Observers;
 
-use App\Shop;
 use App\Mail\ShopActivated;
+use App\Shop;
 use Illuminate\Support\Facades\Mail;
 
 class ShopObserver
